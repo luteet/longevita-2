@@ -1,0 +1,57 @@
+.note {
+
+	background: #ffcce3;
+
+	margin-top: 75px;
+	
+	@include _992 {
+		margin-top: 105px;
+	}
+
+	// .note__block
+
+	&__block {
+		display: flex;
+		align-items: center;
+
+		padding: 37px 0;
+	}
+
+	// .note__icon
+
+	&__icon {
+		display: none;
+
+		@include _992 {
+			display: block;
+			flex: 0 0 116px;
+			margin-right: 38px;
+			width: 116px; height: 95px;
+			fill: var(--primary-color);
+		}
+	}
+
+	// .note__text
+
+	&__text {
+		color: var(--primary-color);
+		font-weight: 600;
+		font-size: 0.8125rem;
+		line-height: 150%;
+		text-align: center;
+
+		@include _550 {
+			font-size: 1.125rem;
+		}
+		
+		@include _768 {
+			font-weight: 500;
+			font-size: 1.25rem;
+		}
+		
+		@include _992 {
+			font-size: 1.5rem;
+			text-align: left;
+		}
+	}
+}

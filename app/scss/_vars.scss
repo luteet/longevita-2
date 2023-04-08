@@ -1,0 +1,55 @@
+
+@use 'sass:math';
+
+$container: 1460;
+$containerMin: 1180;
+$containerMin2: 1020;
+
+:root {
+	--title-font: 'Montserrat', sans-serif;
+	--main-font: 'Montserrat', sans-serif;
+	
+	--primary-color: #0071d5;
+	--primary-color-2: #1584e6;
+	
+	--accent: #ff6000;
+	--accent-hover: #ff8a18;
+	--accent-active: #db6219;
+	--accent-2: #f67eb4;
+	
+
+	--white: #FFF;
+	--black: #000;
+	--text-color: #637282;
+	--light: #f5f5f5;
+	--light-2: #e4eef7;
+
+	--container-padding: 20px;
+	@media (min-width: 355px) {
+		--container-padding: 40px;
+	}
+}
+
+@font-face {
+	@include font-include('Montserrat', 500, swap, normal, 'Montserrat-Medium');
+}
+
+@font-face {
+	@include font-include('Montserrat', 600, swap, normal, 'Montserrat-SemiBold');
+}
+
+@font-face {
+	@include font-include('Montserrat', 700, swap, normal, 'Montserrat-Bold');
+}
+
+@font-face {
+	@include font-include('Oswald', 300, swap, normal, 'Oswald-Light');
+}
+
+@font-face {
+	@include font-include('Oswald', 500, swap, normal, 'Oswald-Medium');
+}
+
+@font-face {
+	@include font-include('Oswald', 700, swap, normal, 'Oswald-Bold');
+}
