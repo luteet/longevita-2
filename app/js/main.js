@@ -2,8 +2,6 @@
 const 
 	body = document.querySelector('body'),
 	html = document.querySelector('html'),
-	menu = document.querySelectorAll('.header__burger, .header__nav, body'),
-	burger = document.querySelector('.header__burger'),
 	header = document.querySelector('.header');
 
 
@@ -157,16 +155,6 @@ body.addEventListener('click', function (event) {
 	function $(elem) {
 		return event.target.closest(elem)
 	}
-
-	// =-=-=-=-=-=-=-=-=-=- <open menu in header> -=-=-=-=-=-=-=-=-=-=-
-
-	if ($('.header__burger')) {
-		menu.forEach(element => {
-			element.classList.toggle('_mob-menu-active')
-		})
-	}
-
-	// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
 
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
