@@ -403,7 +403,11 @@ function draw(arg) {
 		ctx.strokeStyle = "#ffcce3";
 		ctx.beginPath();
 
-		ctx.moveTo(width - lineWidth, height - halflw);
+		if(window.innerWidth >= 768) {
+			ctx.moveTo(width - lineWidth, height - halflw);
+		} else {
+			ctx.moveTo(width - halflw, height - halflw);
+		}
 		ctx.lineTo(angleSize + halflw, height - halflw);
 		ctx.arc(angleSize + halflw, height - halflw - angleSize - 0, angleSize, getRadians(90), getRadians(180), false);
 		ctx.lineTo(halflw, halflw + angleSize);
@@ -413,9 +417,12 @@ function draw(arg) {
 		ctx.lineTo(width - lineWidth - (lineWidth*2), height - (lineWidth * 2) - (angleSize*2));
 		if(window.innerWidth >= 768) {
 			ctx.arc(width - angleSize - 4, height - lineWidth - (angleSize*2), angleSize, getRadians(180), getRadians(90), true);
+			ctx.lineTo(width - lineWidth, height - angleSize - lineWidth);
 		} else {
 			ctx.arc(width - angleSize + lineWidth + halflw + 6, height - lineWidth - (angleSize*2), angleSize, getRadians(180), getRadians(90), true);
 		}
+		
+		
 		ctx.moveTo(width - lineWidth, height - lineWidth);
 		
 
@@ -423,14 +430,19 @@ function draw(arg) {
 
 		ctx.lineWidth = 0;
 		ctx.strokeStyle = "transparent";
-		ctx.fillStyle = "#ffcce3";
+		ctx.fillStyle = "#ffcce3"; //ffcce3
 		
 		ctx.beginPath();
-		ctx.roundRect(width - lineWidth, height - lineWidth, lineWidth, lineWidth, [0, halflw, halflw, 0]);
+		/* ctx.arc(width - lineWidth, height - lineWidth - angleSize, halflw, getRadians(0), getRadians(360), true);
+		ctx.arc(width - lineWidth, height - halflw - 1, halflw, getRadians(0), getRadians(360), true); */
+		//ctx.roundRect(width - lineWidth, height - lineWidth, lineWidth, lineWidth, [0, halflw, halflw, 0]);
 		if(window.innerWidth >= 768) {
-			ctx.roundRect(width - (lineWidth*1.5) - 2, height - (lineWidth*3)+2, lineWidth * 1.5, lineWidth, [0, halflw, halflw, 0]);
+			ctx.arc(width - lineWidth, height - lineWidth - angleSize, halflw, getRadians(0), getRadians(360), true);
+			ctx.arc(width - lineWidth, height - halflw - 1, halflw, getRadians(0), getRadians(360), true);
 		} else {
-			ctx.roundRect(width - lineWidth - 2, height - (lineWidth*3) - 25, lineWidth, lineWidth, [0, halflw, halflw, 0]);
+			ctx.arc(width - halflw, height - lineWidth - angleSize, halflw, getRadians(0), getRadians(360), true);
+			ctx.arc(width - halflw, height - halflw, halflw, getRadians(0), getRadians(360), true);
+			//ctx.roundRect(width - lineWidth - 2, height - (lineWidth*3) - 25, lineWidth, lineWidth, [0, halflw, halflw, 0]);
 		}
 		
 		ctx.fill();
