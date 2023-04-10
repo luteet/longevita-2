@@ -164,11 +164,7 @@ body.addEventListener('click', function (event) {
 		event.preventDefault();
 		let section;
 	
-		section = document.querySelector(btnToScroll.getAttribute('href'))
-	
-		menu.forEach(elem => {
-			elem.classList.remove('_active')
-		})
+		section = document.querySelector(btnToScroll.getAttribute('href'));
 	
 		window.scroll({
 			left: 0,
